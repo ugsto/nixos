@@ -1,8 +1,12 @@
-{ modulesPath, lib, pkgs, ... }: {
+{ modulesPath, lib, pkgs, ... }:
+
+{
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
     (modulesPath + "/profiles/qemu-guest.nix")
-    ./disk-config.nix
+    ../disk-config.nix
+    ./users/root.nix
+    ./users/kurisu.nix
   ];
 
   environment.systemPackages = map lib.lowPrio [
