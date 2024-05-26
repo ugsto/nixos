@@ -1,6 +1,8 @@
+{ ... }:
+
 {
   users.users.kurisu = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [ "networkmanager" "wheel" ];
   };
 }

@@ -1,8 +1,9 @@
-{ lib, ... }:
+{ disk, ... }:
+
 {
   disko.devices = {
     disk.disk1 = {
-      device = lib.mkDefault "/dev/sda";
+      device = disk;
       type = "disk";
       content = {
         type = "gpt";
@@ -40,7 +41,7 @@
         type = "lvm_vg";
         lvs = {
           root = {
-            size = "8G";
+            size = "16G";
             content = {
               type = "filesystem";
               format = "ext4";
